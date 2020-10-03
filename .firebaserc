@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "uc-fitness-app": {
+      "hosting": {
+        "ua-angular-app": [
+          "uc-fitness-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "uc-fitness-app"
+  }
+}

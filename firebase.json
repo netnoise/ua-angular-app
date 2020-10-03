@@ -1,0 +1,37 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "**/.*",
+      "**/node_modules/**",
+      "src/**/.*",
+      ".git",
+      ".idea",
+      ".browserslistrc",
+      ".editorconfig",
+      ".firebaserc",
+      ".gitignore",
+      ".prettierrc.json",
+      ".prettierignore",
+      "database.rules.json",
+      "firebase.json",
+      "karma.conf.js",
+      "package.json",
+      "README.md",
+      "tsconfig.app.json",
+      "tsconfig.json",
+      "tsconfig.spec.json",
+      "tslint.json",
+      "yarn.lock"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
