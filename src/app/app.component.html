@@ -1,4 +1,12 @@
-<div class="wrapper">
-  <h1>user authenticated: {{(user$ | async)?.authenticated}}</h1>
-  <router-outlet></router-outlet>
+<div>
+  <app-header
+    [user]="user$ | async"
+    (logout)="onLogout()">
+  </app-header>
+  <app-nav
+    *ngIf="(user$ | async)?.authenticated">
+  </app-nav>
+  <div class="wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>
