@@ -9,9 +9,10 @@ import { AuthModule } from './auth/auth.module';
 // @ts-ignore
 import { Store } from 'store';
 import { CoreModule } from './core/core.module';
+import { AppNavComponent } from './core/components/app-nav/app-nav.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, AppNavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
