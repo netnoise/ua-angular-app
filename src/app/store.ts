@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { distinctUntilChanged, pluck } from 'rxjs/operators';
 
 export interface State {
+  // tslint:disable-next-line:no-any
   [key: string]: any;
   user: User | undefined;
   // meals: Meal[] | undefined;
@@ -35,7 +36,7 @@ export class Store {
     return this.store.pipe(pluck(name));
   }
 
-  // tslint:disable-next-line:no-shadowed-variable
+  // tslint:disable-next-line:no-shadowed-variable no-any
   set(name: string, state: any): void {
     this.subject.next({ ...this.value, [name]: state });
   }

@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { Store } from './store';
+import { Store } from 'store';
 import { User } from './auth/shared/model/user';
 import { Router } from '@angular/router';
 import { AuthService } from './auth/shared/services/auth.service';
@@ -31,6 +31,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   async onLogout(): Promise<void> {
     await this.authService.logoutUser();
-    this.router.navigate(['/auth/login']);
+    await this.router.navigate(['/auth/login']);
   }
 }

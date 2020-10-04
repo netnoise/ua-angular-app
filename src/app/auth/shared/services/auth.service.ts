@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Store } from '../../../store';
+import { Store } from 'store';
 import { tap } from 'rxjs/operators';
 import { User } from '../model/user';
 import { Observable } from 'rxjs';
@@ -26,10 +26,12 @@ export class AuthService {
 
   constructor(private store: Store, private af: AngularFireAuth) {}
 
+  // tslint:disable-next-line:no-any
   get user(): Promise<any> {
     return this.af.currentUser;
   }
 
+  // tslint:disable-next-line:no-any
   get authState(): Observable<any> {
     return this.af.authState;
   }

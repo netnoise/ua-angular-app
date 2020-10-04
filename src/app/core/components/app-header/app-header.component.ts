@@ -8,7 +8,7 @@ import { User } from '../../../auth/shared/model/user';
 })
 export class AppHeaderComponent implements OnInit {
   @Input()
-  user!: User;
+  user!: User | null;
 
   @Output()
   // tslint:disable-next-line:no-any
