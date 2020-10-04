@@ -18,6 +18,7 @@ const routes: Routes = [
         (m) => m.PlaceholderModule
       ),
   },
+  { path: 'pizza', loadChildren: () => import('./pizza/pizza.module').then(m => m.PizzaModule) },
 ];
 
 @NgModule({
