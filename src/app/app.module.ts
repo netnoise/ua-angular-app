@@ -11,6 +11,7 @@ import { Store } from 'store';
 import { AppNavComponent } from './core/components/app-nav/app-nav.component';
 import { AppHeaderComponent } from './core/components/app-header/app-header.component';
 import { AppFooterComponent } from './core/components/app-footer/app-footer.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AppFooterComponent } from './core/components/app-footer/app-footer.comp
       enabled: environment.production,
     }),
     AuthModule,
+    CoreModule,
   ],
   providers: [Store],
   bootstrap: [AppComponent],
