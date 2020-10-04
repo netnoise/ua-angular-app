@@ -1,4 +1,4 @@
 <div class="wrapper">
-  <span>{{ title }} app is running!</span>
+  <h1>user authenticated: {{(user$ | async)?.authenticated}}</h1>
   <router-outlet></router-outlet>
 </div>

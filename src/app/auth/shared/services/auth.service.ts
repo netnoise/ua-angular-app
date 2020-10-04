@@ -1,11 +1,38 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Store } from '../../../store';
+import { tap } from 'rxjs/operators';
+import { User } from '../model/user';
+import { Observable } from 'rxjs';
 
 @Injectable(/*{
   providedIn: 'root'
 }*/)
 export class AuthService {
-  constructor(private af: AngularFireAuth) {}
+  auth$ = this.af.authState.pipe(
+    tap((next) => {
+      if (!next) {
+        this.store.set('user', null);
+        return;
+      }
+      const user: User = {
+        email: next.email,
+        uid: next.uid,
+        authenticated: true,
+      };
+      this.store.set('user', user);
+    })
+  );
+
+  constructor(private store: Store, private af: AngularFireAuth) {}
+
+  get user(): Promise<any> {
+    return this.af.currentUser;
+  }
+
+  get authState(): Observable<any> {
+    return this.af.authState;
+  }
 
   createUser(
     email: string,
@@ -19,5 +46,9 @@ export class AuthService {
     password: string
   ): ReturnType<firebase.auth.Auth['signInWithEmailAndPassword']> {
     return this.af.signInWithEmailAndPassword(email, password);
+  }
+
+  async logoutUser(): Promise<void> {
+    return this.af.signOut();
   }
 }

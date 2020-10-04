@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthModule } from './auth/auth.module';
+// @ts-ignore
+import { Store } from 'store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +19,7 @@ import { AuthModule } from './auth/auth.module';
     }),
     AuthModule,
   ],
-  providers: [],
+  providers: [Store],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
