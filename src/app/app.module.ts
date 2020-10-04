@@ -10,9 +10,15 @@ import { AuthModule } from './auth/auth.module';
 import { Store } from 'store';
 import { AppNavComponent } from './core/components/app-nav/app-nav.component';
 import { AppHeaderComponent } from './core/components/app-header/app-header.component';
+import { AppFooterComponent } from './core/components/app-footer/app-footer.component';
 
 @NgModule({
-  declarations: [AppComponent, AppNavComponent, AppHeaderComponent],
+  declarations: [
+    AppComponent,
+    AppNavComponent,
+    AppHeaderComponent,
+    AppFooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

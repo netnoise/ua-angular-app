@@ -1,0 +1,17 @@
+.wrapper {
+  max-width: 800px;
+  width: 96%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.app-footer {
+  background: #5e7386;
+  border-bottom: 1px solid #c1cedb;
+  padding: 15px 0;
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
+}
