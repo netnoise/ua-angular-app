@@ -8,18 +8,10 @@ import { environment } from '../environments/environment';
 import { AuthModule } from './auth/auth.module';
 // @ts-ignore
 import { Store } from 'store';
-import { AppNavComponent } from './core/components/app-nav/app-nav.component';
-import { AppHeaderComponent } from './core/components/app-header/app-header.component';
-import { AppFooterComponent } from './core/components/app-footer/app-footer.component';
 import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AppNavComponent,
-    AppHeaderComponent,
-    AppFooterComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
